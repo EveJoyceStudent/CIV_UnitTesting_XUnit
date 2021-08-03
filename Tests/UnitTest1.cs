@@ -42,6 +42,21 @@ namespace Tests
             Assert.Equal(false,calc.PrimeCheckRec(6,2));
             Assert.Equal(false,calc.PrimeCheckRec(100,2));
         }
+        [Theory]
+        [InlineData(1)]
+        [InlineData(4)]
+        [InlineData(6)]
+        [InlineData(100)]
+        public void PrimeCheckRecTestTheoryFalse(int value){
+            Assert.False(calc.PrimeCheckRec(value,2));
+        }
+        [Theory]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(5)]
+        public void PrimeCheckRecTestTheoryTrue(int value){
+            Assert.True(calc.PrimeCheckRec(value,2));
+        }
         [Fact]
         public void DivideByZeroExceptionTest()
         {
